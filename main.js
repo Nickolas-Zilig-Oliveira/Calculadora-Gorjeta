@@ -18,6 +18,10 @@ function receiveNumberOfPeopleValue(){
 function receiveTipPercentageValue(value){
     tipPercentage = value / 100
 
+    
+    document.querySelector("#custom-tip").value = "" 
+    
+
     if(buttonSelected !== null){
         buttonSelected.classList.remove("button-selected")
     }
@@ -26,3 +30,16 @@ function receiveTipPercentageValue(value){
     buttonSelected.classList.add("button-selected")
 }
 
+function receiveCustomTipPercentageValue(){
+    tipPercentage = document.querySelector("#custom-tip").valueAsNumber / 100
+
+    removeClassButtonSelected()
+    console.log(tipPercentage)
+}
+
+function removeClassButtonSelected(){
+    if(buttonSelected !== null){
+        buttonSelected.classList.remove("button-selected")
+        buttonSelected = null
+    }
+}
